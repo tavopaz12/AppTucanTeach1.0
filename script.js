@@ -15681,48 +15681,49 @@
             t.Fragment,
             null,
             t.createElement(
-              pe,
+              ie,
               null,
               t.createElement(
-                ie,
-                null,
+                ae,
+                { path: "/", element: t.createElement(ye, null) },
+                t.createElement(ae, {
+                  index: !0,
+                  element: t.createElement(Fa, null),
+                }),
+                t.createElement(ae, {
+                  path: "registro",
+                  element: t.createElement(No, null),
+                }),
+                t.createElement(ae, {
+                  path: "login",
+                  element: t.createElement(Do, null),
+                }),
                 t.createElement(
                   ae,
-                  { path: "/", element: t.createElement(ye, null) },
+                  {
+                    path: "medio-ambiente",
+                    element: t.createElement($o, null),
+                  },
                   t.createElement(ae, {
-                    index: !0,
-                    element: t.createElement(Fa, null),
-                  }),
-                  t.createElement(ae, {
-                    path: "registro",
-                    element: t.createElement(No, null),
-                  }),
-                  t.createElement(ae, {
-                    path: "login",
-                    element: t.createElement(Do, null),
-                  }),
-                  t.createElement(
-                    ae,
-                    {
-                      path: "medio-ambiente",
-                      element: t.createElement($o, null),
-                    },
-                    t.createElement(ae, {
-                      path: ":cursoId",
-                      element: t.createElement(Wo, null),
-                    })
-                  ),
-                  t.createElement(ae, {
-                    path: "*",
-                    element: t.createElement(Ha, null),
+                    path: ":cursoId",
+                    element: t.createElement(Wo, null),
                   })
-                )
+                ),
+                t.createElement(ae, {
+                  path: "*",
+                  element: t.createElement(Ha, null),
+                })
               )
             )
           );
         };
-      r.createRoot(document.getElementById("app")).render(
-        t.createElement(Bo, null)
-      );
+      var Zo = r.createRoot(document.getElementById("app"));
+      window.location.hash &&
+        window.history.replaceState(
+          "",
+          document.title,
+          window.location.pathname
+        ),
+        Zo.render(t.createElement(pe, null, t.createElement(Bo, null)));
     })();
 })();
