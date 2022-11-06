@@ -15673,36 +15673,32 @@
         },
         Wo = function () {
           return t.createElement(
-            t.Fragment,
+            ie,
             null,
+            t.createElement(ae, {
+              path: "/",
+              element: t.createElement(Ra, null),
+            }),
+            t.createElement(ae, {
+              path: "registro",
+              element: t.createElement(Oo, null),
+            }),
+            t.createElement(ae, {
+              path: "login",
+              element: t.createElement(Mo, null),
+            }),
             t.createElement(
-              ie,
-              null,
+              ae,
+              { path: "medio-ambiente", element: t.createElement(Ho, null) },
               t.createElement(ae, {
-                path: "/",
-                element: t.createElement(Ra, null),
-              }),
-              t.createElement(ae, {
-                path: "registro",
-                element: t.createElement(Oo, null),
-              }),
-              t.createElement(ae, {
-                path: "login",
-                element: t.createElement(Mo, null),
-              }),
-              t.createElement(
-                ae,
-                { path: "medio-ambiente", element: t.createElement(Ho, null) },
-                t.createElement(ae, {
-                  path: ":cursoId",
-                  element: t.createElement($o, null),
-                })
-              ),
-              t.createElement(ae, {
-                path: "*",
-                element: t.createElement(Va, null),
+                path: ":cursoId",
+                element: t.createElement($o, null),
               })
-            )
+            ),
+            t.createElement(ae, {
+              path: "*",
+              element: t.createElement(Va, null),
+            })
           );
         };
       r.createRoot(document.getElementById("app")).render(
