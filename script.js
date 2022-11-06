@@ -10482,10 +10482,10 @@
           "children",
         ];
       function me(n) {
-        let { basename: r, children: a, window: s } = n,
-          d = t.useRef();
-        null == d.current &&
-          (d.current = (function (t) {
+        let { basename: r, children: a, window: d } = n,
+          p = t.useRef();
+        null == p.current &&
+          (p.current = (function (t) {
             return (
               void 0 === t && (t = {}),
               (function (t, n, r, a) {
@@ -10553,7 +10553,11 @@
                 return b;
               })(
                 function (e, t) {
-                  let { pathname: n, search: r, hash: a } = e.location;
+                  let {
+                    pathname: n = "/",
+                    search: r = "",
+                    hash: a = "",
+                  } = s(e.location.hash.substr(1));
                   return c(
                     "",
                     { pathname: n, search: r, hash: a },
@@ -10562,23 +10566,44 @@
                   );
                 },
                 function (e, t) {
-                  return "string" == typeof t ? t : u(t);
+                  let n = e.document.querySelector("base"),
+                    r = "";
+                  if (n && n.getAttribute("href")) {
+                    let t = e.location.href,
+                      n = t.indexOf("#");
+                    r = -1 === n ? t : t.slice(0, n);
+                  }
+                  return r + "#" + ("string" == typeof t ? t : u(t));
                 },
-                null,
+                function (e, t) {
+                  !(function (e, t) {
+                    if (!e) {
+                      "undefined" != typeof console && console.warn(t);
+                      try {
+                        throw new Error(t);
+                      } catch (e) {}
+                    }
+                  })(
+                    "/" === e.pathname.charAt(0),
+                    "relative pathnames are not supported in hash history.push(" +
+                      JSON.stringify(t) +
+                      ")"
+                  );
+                },
                 t
               )
             );
-          })({ window: s, v5Compat: !0 }));
-        let p = d.current,
-          [m, h] = t.useState({ action: p.action, location: p.location });
+          })({ window: d, v5Compat: !0 }));
+        let m = p.current,
+          [h, g] = t.useState({ action: m.action, location: m.location });
         return (
-          t.useLayoutEffect(() => p.listen(h), [p]),
+          t.useLayoutEffect(() => m.listen(g), [m]),
           t.createElement(oe, {
             basename: r,
             children: a,
-            location: m.location,
-            navigationType: m.action,
-            navigator: p,
+            location: h.location,
+            navigationType: h.action,
+            navigator: m,
           })
         );
       }
