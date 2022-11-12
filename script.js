@@ -15628,6 +15628,7 @@
           number: "f07239d2-e1eb-4cd2-8456-79a70c5130ed",
           amount: "$10,800",
           due: "12/05/1995",
+          content: "https://tavo-blog.gq/",
         },
         {
           name: "Stankonia",
@@ -15729,6 +15730,16 @@
                 t.createElement("p", null, a.name, ": ", a.number),
                 t.createElement("p", null, "Due Date: ", a.due),
                 t.createElement(
+                  "div",
+                  null,
+                  a.content,
+                  t.createElement("iframe", {
+                    width: "100%",
+                    height: "500rem",
+                    src: a.content,
+                  })
+                ),
+                t.createElement(
                   "p",
                   null,
                   t.createElement(
@@ -15775,6 +15786,7 @@
           number: "0bc6ec04-5175-4f4c-8ad4-86d897931a65",
           amount: "$10,800",
           due: "12/05/1995",
+          content: "https://www.addictinggames.com/embed/html5-games/25172",
         },
         {
           name: "Stankonia",
