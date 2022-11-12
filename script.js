@@ -14095,11 +14095,15 @@
         return t.createElement(
           "div",
           { className: "container__user" },
-          t.createElement("img", {
-            src: "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png",
-            alt: "",
-            className: "container__user__img",
-          }),
+          t.createElement(
+            me,
+            Pa({ to: r + o.search }, a),
+            t.createElement("img", {
+              src: "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png",
+              alt: "",
+              className: "container__user__img",
+            })
+          ),
           t.createElement(
             me,
             Pa({ to: r + o.search }, a),
