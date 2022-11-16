@@ -236,7 +236,7 @@
           i = n.n(o)()(a());
         i.push([
           e.id,
-          ".container__medioAmbiente__temas{transition:all .3s ease;background-color:var(--bg-card-dark);top:0;position:fixed;width:20%;height:100vh;color:#fff;padding:1rem;display:flex;flex-direction:column;animation:fadeIn .5s}@keyframes fadeIn{0%{left:-300px}100%{left:0}}.container__medioAmbiente__temas__info{margin-top:5rem;color:var(--dark-text-color);font-weight:500}.container__medioAmbiente__info{text-align:center;margin-top:.6rem;width:90%}.container__medioAmbiente__temas__infoTitle{display:flex;margin-left:-1.5rem;margin-bottom:.5rem}.container__medioAmbiente__temas__infoTitle p{margin-left:2rem;color:var(--subtitule)}.container__medioAmbiente__temas__infoTitle .container__medioAmbiente__temas__infoTitle__icon{color:var(--subtitule)}.list__temas__medioAmbiente ol{padding:.2rem}.list__temas__medioAmbiente li{padding:.8rem;color:var(--dark-text-color);font-weight:500;border-bottom:1.8px solid var(--border-color)}.list__temas__medioAmbiente li:hover{background-color:var(--temas-hover)}.container__medioAmbiente__temas__exit{width:100%;position:relative;margin-bottom:1.4rem;background-color:#fff;outline:none;border:none;border-radius:.3rem;padding:.3rem;border:.1rem solid #000}.container__medioAmbiente__temas__exit:hover,.container__medioAmbiente__temas__exit:active{background-color:#000;color:#fff;border:.1rem solid var(--dark-text-color)}@media screen and (max-width: 600px){.container__medioAmbiente__temas{top:3.6rem;width:auto;position:sticky}.container__medioAmbiente__temas__info{margin-top:1rem}}",
+          ".container__medioAmbiente__temas{transition:all .3s ease;background-color:var(--bg-card-dark);top:0;position:fixed;width:20%;height:100vh;color:#fff;padding:1rem;display:flex;flex-direction:column;animation:fadeIn .5s}@keyframes fadeIn{0%{left:-300px}100%{left:0}}.container__medioAmbiente__temas__info{margin-top:5rem;color:var(--dark-text-color);font-weight:500}.container__medioAmbiente__info{text-align:center;margin-top:.6rem;width:90%}.container__medioAmbiente__temas__infoTitle{display:flex;margin-left:-1.5rem;margin-bottom:.5rem}.container__medioAmbiente__temas__infoTitle p{margin-left:2rem;color:var(--subtitule)}.container__medioAmbiente__temas__infoTitle .container__medioAmbiente__temas__infoTitle__icon{color:var(--subtitule)}.list__temas__medioAmbiente ol{padding:.2rem}.list__temas__medioAmbiente li{padding:.8rem;color:var(--dark-text-color);font-weight:500;border-bottom:1.8px solid var(--border-color)}.list__temas__medioAmbiente li:hover{background-color:var(--temas-hover)}.container__medioAmbiente__temas__exit{width:100%;position:relative;margin-bottom:1.4rem;background-color:#fff;outline:none;border:none;border-radius:.3rem;padding:.3rem;border:.1rem solid #000}.container__medioAmbiente__temas__exit:hover,.container__medioAmbiente__temas__exit:active{background-color:#000;color:#fff;border:.1rem solid var(--dark-text-color)}@media screen and (max-width: 700px){.container__medioAmbiente__temas{top:3.6rem;width:auto;position:sticky}.container__medioAmbiente__temas__info{margin-top:1rem}}",
           "",
         ]);
         const l = i;
@@ -15934,7 +15934,8 @@
           due: "12/05/1995",
           image:
             "https://definicion.de/wp-content/uploads/2009/10/medio-ambiente.jpg",
-          content: "https://tavo-blog.gq/",
+          content:
+            "https://es.educaplay.com/juego/7148994-componentes_naturales.html",
         },
         {
           name: "Actividad 2",
