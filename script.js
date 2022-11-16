@@ -236,7 +236,7 @@
           i = n.n(o)()(a());
         i.push([
           e.id,
-          ".container__medioAmbiente__temas{transition:all .3s ease;background-color:var(--bg-card-dark);top:0;position:fixed;width:20%;height:100vh;color:#fff;padding:1rem;display:flex;flex-direction:column;animation:fadeIn .5s}@keyframes fadeIn{0%{left:-300px}100%{left:0}}.container__medioAmbiente__temas__info{margin-top:5rem;color:var(--dark-text-color);font-weight:500}.container__medioAmbiente__info{text-align:center;margin-top:.6rem;width:90%}.container__medioAmbiente__temas__infoTitle{display:flex;margin-left:-1.5rem;margin-bottom:.5rem}.container__medioAmbiente__temas__infoTitle p{margin-left:2rem;color:var(--subtitule)}.container__medioAmbiente__temas__infoTitle .container__medioAmbiente__temas__infoTitle__icon{color:var(--subtitule)}.list__temas__medioAmbiente ol{padding:.2rem}.list__temas__medioAmbiente li{border-bottom:1.8px solid var(--border-color);padding:.8rem;font-weight:500}.list__temas__medioAmbiente li:hover{background-color:var(--temas-hover)}.list__temas__medioAmbiente .tema__active{color:var(--dark-text-color)}.list__temas__medioAmbiente .tema__disabled{color:var(--subtitule);pointer-events:none}.container__medioAmbiente__temas__exit{width:100%;position:relative;margin-bottom:1.4rem;background-color:#fff;outline:none;border:none;border-radius:.3rem;padding:.3rem;border:.1rem solid #000}.container__medioAmbiente__temas__exit:hover,.container__medioAmbiente__temas__exit:active{background-color:#000;color:#fff;border:.1rem solid var(--dark-text-color)}@media screen and (max-width: 700px){.container__medioAmbiente__temas{top:3.6rem;width:auto;position:sticky}.container__medioAmbiente__temas__info{margin-top:1rem}}",
+          ".container__medioAmbiente__temas{transition:all .3s ease;background-color:var(--bg-card-dark);top:0;position:fixed;width:20%;height:100vh;color:#fff;padding:1rem;display:flex;flex-direction:column;animation:fadeIn .5s}.container__medioAmbiente__temas-active{transition:all .3s ease;background-color:var(--bg-card-dark);top:0;position:fixed;width:20%;height:100vh;color:#fff;padding:1rem;display:flex;flex-direction:column;animation:fadeIn .5s}@keyframes fadeIn{0%{left:-300px}100%{left:0}}.container__medioAmbiente__temas__info{margin-top:5rem;color:var(--dark-text-color);font-weight:500}.container__medioAmbiente__info{text-align:center;margin-top:.6rem;width:90%}.container__medioAmbiente__temas__infoTitle{display:flex;margin-left:-1.5rem;margin-bottom:.5rem}.container__medioAmbiente__temas__infoTitle p{margin-left:2rem;color:var(--subtitule)}.container__medioAmbiente__temas__infoTitle .container__medioAmbiente__temas__infoTitle__icon{color:var(--subtitule)}.list__temas__medioAmbiente ol{padding:.2rem}.list__temas__medioAmbiente li{border-bottom:1.8px solid var(--border-color);padding:.8rem;font-weight:500}.list__temas__medioAmbiente li:hover{background-color:var(--temas-hover)}.list__temas__medioAmbiente .tema__active{color:var(--dark-text-color)}.list__temas__medioAmbiente .tema__disabled{color:var(--subtitule);pointer-events:none}.container__medioAmbiente__temas__exit{width:100%;position:relative;margin-bottom:1.4rem;background-color:#fff;outline:none;border:none;border-radius:.3rem;padding:.3rem;border:.1rem solid #000}.container__medioAmbiente__temas__exit:hover,.container__medioAmbiente__temas__exit:active{background-color:#000;color:#fff;border:.1rem solid var(--dark-text-color)}@media screen and (max-width: 700px){.container__medioAmbiente__temas{top:3.6rem;width:auto;position:sticky}.container__medioAmbiente__temas__info{margin-top:1rem}}",
           "",
         ]);
         const l = i;
@@ -15968,21 +15968,32 @@
       }
       var li = a(949),
         ci = {};
-      function si() {
-        var e = Q(),
-          n = Y(),
-          r = ii();
+      function si(e) {
+        var n = e.pos,
+          r = Q(),
+          a = Y(),
+          o = ii();
         return t.createElement(
           "section",
-          { className: "container__medioAmbiente__temas" },
+          {
+            className:
+              0 === n
+                ? "container__medioAmbiente__temas"
+                : "container__medioAmbiente__temas-active",
+          },
           t.createElement(
             "div",
-            { className: "container__medioAmbiente__temas__info" },
+            {
+              className:
+                0 === n
+                  ? "container__medioAmbiente__temas__info"
+                  : "container__medioAmbiente__temas__info-active",
+            },
             t.createElement(
               "button",
               {
                 onClick: function () {
-                  e("/medio-ambiente");
+                  r("/medio-ambiente");
                 },
                 className: "container__medioAmbiente__temas__exit",
               },
@@ -16023,12 +16034,12 @@
               t.createElement(
                 "ol",
                 null,
-                r.map(function (e) {
+                o.map(function (e) {
                   return t.createElement(
                     pe,
                     {
                       className: "tema__active",
-                      to: "tema/".concat(e.number) + n.search,
+                      to: "tema/".concat(e.number) + a.search,
                       key: e.number,
                     },
                     t.createElement(
@@ -16126,88 +16137,99 @@
       var pi = a(530),
         gi = {};
       function hi(e, t) {
+        return (
+          (function (e) {
+            if (Array.isArray(e)) return e;
+          })(e) ||
+          (function (e, t) {
+            var n =
+              null == e
+                ? null
+                : ("undefined" != typeof Symbol && e[Symbol.iterator]) ||
+                  e["@@iterator"];
+            if (null != n) {
+              var r,
+                a,
+                o = [],
+                i = !0,
+                l = !1;
+              try {
+                for (
+                  n = n.call(e);
+                  !(i = (r = n.next()).done) &&
+                  (o.push(r.value), !t || o.length !== t);
+                  i = !0
+                );
+              } catch (e) {
+                (l = !0), (a = e);
+              } finally {
+                try {
+                  i || null == n.return || n.return();
+                } finally {
+                  if (l) throw a;
+                }
+              }
+              return o;
+            }
+          })(e, t) ||
+          (function (e, t) {
+            if (e) {
+              if ("string" == typeof e) return bi(e, t);
+              var n = Object.prototype.toString.call(e).slice(8, -1);
+              return (
+                "Object" === n && e.constructor && (n = e.constructor.name),
+                "Map" === n || "Set" === n
+                  ? Array.from(e)
+                  : "Arguments" === n ||
+                    /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
+                  ? bi(e, t)
+                  : void 0
+              );
+            }
+          })(e, t) ||
+          (function () {
+            throw new TypeError(
+              "Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+            );
+          })()
+        );
+      }
+      function bi(e, t) {
         (null == t || t > e.length) && (t = e.length);
         for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
         return r;
       }
-      function bi() {
-        var e,
-          n,
-          r,
-          a =
-            ((n = (0, t.useState)("false" !== localStorage.getItem("toogle"))),
-            (r = 2),
-            (function (e) {
-              if (Array.isArray(e)) return e;
-            })(n) ||
-              (function (e, t) {
-                var n =
-                  null == e
-                    ? null
-                    : ("undefined" != typeof Symbol && e[Symbol.iterator]) ||
-                      e["@@iterator"];
-                if (null != n) {
-                  var r,
-                    a,
-                    o = [],
-                    i = !0,
-                    l = !1;
-                  try {
-                    for (
-                      n = n.call(e);
-                      !(i = (r = n.next()).done) &&
-                      (o.push(r.value), !t || o.length !== t);
-                      i = !0
-                    );
-                  } catch (e) {
-                    (l = !0), (a = e);
-                  } finally {
-                    try {
-                      i || null == n.return || n.return();
-                    } finally {
-                      if (l) throw a;
-                    }
-                  }
-                  return o;
-                }
-              })(n, r) ||
-              (function (e, t) {
-                if (e) {
-                  if ("string" == typeof e) return hi(e, t);
-                  var n = Object.prototype.toString.call(e).slice(8, -1);
-                  return (
-                    "Object" === n && e.constructor && (n = e.constructor.name),
-                    "Map" === n || "Set" === n
-                      ? Array.from(e)
-                      : "Arguments" === n ||
-                        /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-                      ? hi(e, t)
-                      : void 0
-                  );
-                }
-              })(n, r) ||
-              (function () {
-                throw new TypeError(
-                  "Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
-                );
-              })()),
+      function vi() {
+        var e = hi(
+            (0, t.useState)("false" !== localStorage.getItem("toogle")),
+            2
+          ),
+          n = e[0],
+          r = e[1],
+          a = hi((0, t.useState)(0), 2),
           o = a[0],
-          i = a[1],
-          l = q();
+          i = a[1];
+        window.onscroll = function () {
+          i(window.scrollY);
+        };
+        var l,
+          c = q();
         return (
-          (e = l.cursoId),
-          Ko.find(function (t) {
-            return t.number === e;
+          (l = c.cursoId),
+          Ko.find(function (e) {
+            return e.number === l;
           })
             ? t.createElement(
                 t.Fragment,
                 null,
-                t.createElement(ai, { toggleMenu: o, setToggleMenu: i }),
+                0 === o
+                  ? t.createElement(ai, { toggleMenu: n, setToggleMenu: r })
+                  : "",
                 t.createElement(
                   "div",
                   { className: "conten__sesion__container" },
-                  !0 === o ? t.createElement(si, null) : "",
-                  t.createElement(mi, { isToogle: o })
+                  !0 === n ? t.createElement(si, { pos: o }) : "",
+                  t.createElement(mi, { isToogle: n })
                 )
               )
             : t.createElement(Qa, {
@@ -16217,7 +16239,7 @@
               })
         );
       }
-      function vi() {
+      function yi() {
         var e,
           n = q(),
           r =
@@ -16244,7 +16266,7 @@
         (gi.insertStyleElement = Ne()),
         ye()(pi.Z, gi),
         pi.Z && pi.Z.locals && pi.Z.locals;
-      var yi = [
+      var wi = [
         {
           name: "Desarrollo Humano",
           number: "0bc6ec04-5175-4f4c-8ad4-86d897931a65",
@@ -16301,8 +16323,8 @@
           due: "01/27/2998",
         },
       ];
-      function wi() {
-        var e = yi;
+      function ki() {
+        var e = wi;
         return t.createElement(
           t.Fragment,
           null,
@@ -16329,13 +16351,13 @@
           )
         );
       }
-      function ki() {
+      function xi() {
         var e,
           n = q(),
           r = Q(),
           a =
             ((e = n.cursoId),
-            yi.find(function (t) {
+            wi.find(function (t) {
               return t.number === e;
             }));
         return a
@@ -16369,7 +16391,7 @@
               to: "/desarrollo-humano",
             });
       }
-      const xi = function () {
+      const _i = function () {
         return t.createElement(
           ie,
           null,
@@ -16387,7 +16409,7 @@
           }),
           t.createElement(ae, {
             path: "user/:userId",
-            element: t.createElement(vi, null),
+            element: t.createElement(yi, null),
           }),
           t.createElement(ae, {
             path: "medio-ambiente",
@@ -16397,7 +16419,7 @@
             ae,
             {
               path: "medio-ambiente/sesion/:cursoId",
-              element: t.createElement(bi, null),
+              element: t.createElement(vi, null),
             },
             t.createElement(ae, {
               index: !0,
@@ -16410,11 +16432,11 @@
           ),
           t.createElement(ae, {
             path: "desarrollo-humano",
-            element: t.createElement(wi, null),
+            element: t.createElement(ki, null),
           }),
           t.createElement(ae, {
             path: "desarrollo-humano/sesion/:cursoId",
-            element: t.createElement(ki, null),
+            element: t.createElement(xi, null),
           }),
           t.createElement(ae, {
             path: "*",
@@ -16429,7 +16451,7 @@
         t.createElement(
           t.StrictMode,
           null,
-          t.createElement(me, null, t.createElement(xi, null))
+          t.createElement(me, null, t.createElement(_i, null))
         )
       );
     })();
