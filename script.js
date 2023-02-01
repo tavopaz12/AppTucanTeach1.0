@@ -8934,11 +8934,6 @@
           }),
           (t.version = "18.2.0-next-9e3b772b8-20220608");
       },
-      745: (e, t, n) => {
-        "use strict";
-        var r = n(935);
-        (t.createRoot = r.createRoot), (t.hydrateRoot = r.hydrateRoot);
-      },
       935: (e, t, n) => {
         "use strict";
         !(function e() {
@@ -9853,7 +9848,7 @@
       var e,
         t = a(294),
         n = a.t(t, 2),
-        r = a(745);
+        r = a(935);
       function o() {
         return (
           (o = Object.assign
